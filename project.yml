@@ -13,9 +13,12 @@ targets:
     info:
       path: Sources/Info.plist
       properties:
-        CFBundleDisplayName: VoIP Phone
+        CFBundleDisplayName: MeshPBX Phone
         UILaunchScreen: {}
-        NSMicrophoneUsageDescription: Microphone access is required for VoIP phone calls.
+        NSMicrophoneUsageDescription: Microphone access is required for VoIP calls, call recording, and voicemail.
+        NSLocalNetworkUsageDescription: Local network access is required to run the built-in peer-to-peer VoIP server and discover other phones.
+        NSBonjourServices:
+          - _voippbx._tcp
         UIBackgroundModes:
           - audio
           - voip
