@@ -1,0 +1,30 @@
+name: VoIPSoftphone
+options:
+  bundleIdPrefix: com.local
+  deploymentTarget:
+    iOS: "16.0"
+
+targets:
+  VoIPSoftphone:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+    info:
+      path: Sources/Info.plist
+      properties:
+        CFBundleDisplayName: VoIP Phone
+        UILaunchScreen: {}
+        NSMicrophoneUsageDescription: Microphone access is required for VoIP phone calls.
+        UIBackgroundModes:
+          - audio
+          - voip
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.voipsoftphone
+        SWIFT_VERSION: "5.0"
+        SWIFT_STRICT_CONCURRENCY: minimal
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_IDENTITY: ""
